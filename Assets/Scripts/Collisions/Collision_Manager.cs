@@ -18,7 +18,7 @@ public class Collision_Manager : Mono_Behaviour_EX {
 	public Dictionary< string, Dictionary<Transform, float> > hit_second;
 	public Dictionary<Collision, float> collisions;
 	public Dictionary<Collider, float> triggers;
-	public Entity ai;
+	public AI ai;
 	//--------------------------------------------------------------------
 	// ● 初期化
 	//--------------------------------------------------------------------
@@ -29,7 +29,7 @@ public class Collision_Manager : Mono_Behaviour_EX {
 		collisions = new Dictionary<Collision, float>();
 		triggers = new Dictionary<Collider, float>();
 
-		if (ai == null)	ai = GetComponent<Entity>();
+		if (ai == null)	ai = GetComponent<AI>();
 	}
 	//--------------------------------------------------------------------
 	// ● 更新（早）

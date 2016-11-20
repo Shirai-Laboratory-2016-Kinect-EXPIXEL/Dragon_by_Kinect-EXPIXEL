@@ -8,6 +8,9 @@ TagManager:
   - Scene_Manager
   - Water
   - Enemy
+  - Dragon
+  - Fire
+  - Home
   layers:
   - Default
   - TransparentFX

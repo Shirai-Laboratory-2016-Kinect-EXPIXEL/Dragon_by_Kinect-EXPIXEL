@@ -44,8 +44,8 @@ public class Base_Scripts : Mono_Behaviour_EX {
 //			Application.targetFrameRate = DEFAULT_FRAME_RATE;	// FPS を設定
 
 		// マウスカーソルを非表示
-//		Cursor.visible = false;
-//		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Confined;
 	}
 	//--------------------------------------------------------------------
 	// ● 初期化

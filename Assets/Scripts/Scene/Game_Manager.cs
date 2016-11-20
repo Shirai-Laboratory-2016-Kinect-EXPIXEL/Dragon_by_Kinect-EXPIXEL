@@ -103,8 +103,8 @@ public class Game_Manager : Scene_Manager {
 	//--------------------------------------------------------------------
 	protected override void update_end() {
 		var status =
-			GameObject.FindWithTag("Player")
-			.GetComponent<Entity_Status>();
+			GameObject.FindWithTag("Dragon")
+			.GetComponent<AI_Status>();
 		var save = Base_Scripts.get_instance()
 			.GetComponent<Save_Data>();
 		if (next_scene_name == "Ending") {
