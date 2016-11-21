@@ -3,6 +3,8 @@
 //------------------------------------------------------------------------
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 //========================================================================
 // ■ State_Fishing_Dragon
 //------------------------------------------------------------------------
@@ -18,6 +20,10 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 	bool is_sinking;
 	Vector3 default_position;
 	Quaternion default_rotation;
+	float error_second = 60;
+	Game_Manager game_manager;
+	List<Coroutine> coroutines;
+	bool is_error;
 	//--------------------------------------------------------------------
 	// ● 初期化
 	//--------------------------------------------------------------------
@@ -28,7 +34,12 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 		default_position = ai.transform.position;
 		default_rotation = ai.transform.rotation;
 
-		ai.StartCoroutine( turn() );
+		game_manager = GameObject.FindWithTag("Scene_Manager")
+			.GetComponent<Game_Manager>();
+		error_second += Time.time;
+
+		coroutines = new List<Coroutine>();
+		coroutines.Add( ai.StartCoroutine( turn() ) );
 	}
 	IEnumerator turn() {
 		ai.animator.SetBool("Is_Move", true);
@@ -46,7 +57,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 		ai.animator.SetFloat("Move_Z", 0);
 		ai.animator.SetBool("Is_Move", false);
 		yield return new WaitForSeconds(1);
-		ai.StartCoroutine( jump() );
+		coroutines.Add( ai.StartCoroutine( jump() ) );
 	}
 	IEnumerator jump() {
 		ai.animator.SetBool("Is_Swim", true);
@@ -65,7 +76,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 		
 		ai.rigidbody.useGravity = false;
 		is_setup = true;
-		ai.StartCoroutine( tracking() );
+		coroutines.Add( ai.StartCoroutine( tracking() ) );
 	}
 	IEnumerator tracking() {
 		ai.animator.SetFloat("Move_Z", 1);
@@ -75,7 +86,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 			if (is_sinking)	break;
 			yield return null;
 		}
-		ai.StartCoroutine( back_home() );
+		coroutines.Add( ai.StartCoroutine( back_home() ) );
 	}
 	IEnumerator back_home() {
 		while (true) {
@@ -88,9 +99,12 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 		}
 		forcing_stop();
 		yield return new WaitForSeconds(1);
-		ai.StartCoroutine( back_jump() );
+		coroutines.Add( ai.StartCoroutine( back_jump() ) );
 	}
 	IEnumerator back_jump() {
+		var pos = ai.transform.position;
+		pos.y = sea.position.y - 1;
+		ai.transform.position = pos;
 		ai.animator.SetFloat("Move_Z", 0);
 		ai.animator.SetBool("Is_Swim", false);
 		var r = ai.transform.rotation * Quaternion.Euler(-45, 0, 0);
@@ -106,7 +120,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 			}
 			yield return null;
 		}
-		ai.StartCoroutine( landing_home() );
+		coroutines.Add( ai.StartCoroutine( landing_home() ) );
 	}
 	IEnumerator landing_home() {
 		while (true) {
@@ -117,7 +131,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 				break;
 			yield return null;
 		}
-		ai.StartCoroutine( correct_home() );
+		coroutines.Add( ai.StartCoroutine( correct_home() ) );
 	}
 	IEnumerator correct_home() {
 		forcing_stop();
@@ -130,12 +144,12 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 			tracking_target();
 			var delta =
 				Vector3.Distance(ai.transform.position, target_position);
-			if (delta < 2)
+			if (delta < 1)
 				break;
 			yield return null;
 		}
 		ai.max_move_speed = temp;
-		ai.StartCoroutine( turn_home() );
+		coroutines.Add( ai.StartCoroutine( turn_home() ) );
 	}
 	IEnumerator turn_home() {
 		forcing_stop();
@@ -162,6 +176,17 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 	public override void update() {
 		base.update();
 
+		
+		if (error_second < Time.time)
+			is_error = true;
+		Debug_EX.add( "コルーチン停止 : " + (error_second - Time.time) );
+
+		if (is_error) {
+			stop_all_coroutines();
+			game_manager.next_scene_name =
+				SceneManager.GetActiveScene().name;
+		}
+
 
 		if (!is_setup)	return;
 
@@ -179,11 +204,21 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 		base.late_update();
 	}
 	//--------------------------------------------------------------------
+	// ● コルーチンの全停止
+	//--------------------------------------------------------------------
+	void stop_all_coroutines() {
+		foreach (var c in coroutines) {
+			if (c != null)	ai.StopCoroutine(c);
+		}
+	}
+	//--------------------------------------------------------------------
 	// ● 終了
 	//--------------------------------------------------------------------
 	public override void finalize() {
 		base.finalize();
 		
+		stop_all_coroutines();
+
 		ai.transform.position = default_position;
 		ai.transform.rotation = default_rotation;
 		ai.rigidbody.useGravity = true;
@@ -198,6 +233,8 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 	public override void receive_collision_data(ref Collision_Data data) {
 		base.receive_collision_data(ref data);
 
+		if (data.target.name == "Terrain")
+			is_error = true;
 
 		if (is_sinking)	return;
 		

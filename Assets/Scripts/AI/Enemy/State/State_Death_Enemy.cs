@@ -13,7 +13,7 @@ public class State_Death_Enemy : State_Base_Enemy {
 	//--------------------------------------------------------------------
 	// ● メンバ変数
 	//--------------------------------------------------------------------
-
+	float destroy_second = 10;
 	//--------------------------------------------------------------------
 	// ● 初期化
 	//--------------------------------------------------------------------
@@ -22,6 +22,7 @@ public class State_Death_Enemy : State_Base_Enemy {
 		
 		stop();
 		ai.rigidbody.useGravity = true;
+		ai.rigidbody.freezeRotation = false;
 
 		var go = Object.Instantiate(ai.explosion);
 		go.transform.position = ai.transform.position + Vector3.up * 0.5f;
@@ -33,6 +34,8 @@ public class State_Death_Enemy : State_Base_Enemy {
 			r.material.SetColor("_Color", Color.white * 0.1f);
 		}
 
+		destroy_second += Time.time;
+
 //		ai.ses["Engine"].Stop();
 	}
 	//--------------------------------------------------------------------
@@ -40,6 +43,9 @@ public class State_Death_Enemy : State_Base_Enemy {
 	//--------------------------------------------------------------------
 	public override void update() {
 		base.update();
+
+		if (destroy_second < Time.time)
+			Object.Destroy(ai.gameObject);
 	}
 	//--------------------------------------------------------------------
 	// ● 更新（遅）

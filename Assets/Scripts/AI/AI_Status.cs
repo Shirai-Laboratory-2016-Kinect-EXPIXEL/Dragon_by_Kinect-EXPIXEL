@@ -37,7 +37,7 @@ public class AI_Status : Mono_Behaviour_EX {
 	// ● 更新
 	//--------------------------------------------------------------------
 	protected virtual void Update() {
-		mood -= 0.1f * Time.deltaTime;
+		mood -= 0.5f * Time.deltaTime;
 		mood = Mathf.Clamp(mood, 0, 100);
 
 //		update_test();

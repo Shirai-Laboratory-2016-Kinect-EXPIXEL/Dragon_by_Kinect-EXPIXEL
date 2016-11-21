@@ -63,10 +63,11 @@ public class Game_Manager : Scene_Manager {
 		}
 		
 		Debug_EX.add("Game\t :" + game_state);
-
+/*
 		if (Input.GetKeyDown(KeyCode.F12)) {
 			next_scene_name = "Title";
 		}
+*/
 	}
 	//--------------------------------------------------------------------
 	// ● 更新（開始）

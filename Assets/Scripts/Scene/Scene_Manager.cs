@@ -23,7 +23,7 @@ public class Scene_Manager : Mono_Behaviour_EX {
 	// ● メンバ変数
 	//--------------------------------------------------------------------
 	protected State state = State.INITIALIZE;
-	protected string next_scene_name = "";
+	public string next_scene_name = "";
 	Fade fade;
 	//--------------------------------------------------------------------
 	// ● 初期化（早）

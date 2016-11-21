@@ -42,14 +42,14 @@ public class Loitering_Points : Mono_Behaviour_EX {
 	// ● エディタ描画
 	//--------------------------------------------------------------------
 	void OnDrawGizmosSelected() {
-		if (points == null) {
+//		if (points == null) {
 			points = new List<Vector3>();
 			var rs = GetComponentsInChildren<Renderer>();
 			foreach (var r in rs) {
 				r.enabled = Debug.isDebugBuild;
 				points.Add(r.transform.position);
 			}
-		}
+//		}
 		
 		Gizmos.color = Color.red;
 		Gizmos.DrawSphere(points[0], 1);

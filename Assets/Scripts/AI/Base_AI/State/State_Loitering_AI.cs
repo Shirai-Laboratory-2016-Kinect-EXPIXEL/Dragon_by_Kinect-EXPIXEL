@@ -98,6 +98,8 @@ public class State_Loitering_AI : State_Base_AI {
 	// ● 更新（迂回）
 	//--------------------------------------------------------------------
 	void update_detour() {
+		return;
+
 		var delta = ai.transform.position - ai.points.transform.position;
 		target_position = delta.normalized * 100;
 	}

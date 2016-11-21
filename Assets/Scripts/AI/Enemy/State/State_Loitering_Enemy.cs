@@ -23,9 +23,7 @@ public class State_Loitering_Enemy : State_Loitering_AI {
 	// ● 初期化
 	//--------------------------------------------------------------------
 	public override void initialize() {
-		next_state = new State_Wait_Enemy(
-			1, Random.Range(3, 8), new State_Loitering_Enemy() );
-		next_wait_second = Random.Range(30, 60);
+		next_wait_second = float.PositiveInfinity;
 
 		base.initialize();
 

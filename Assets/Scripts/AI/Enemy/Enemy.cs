@@ -23,8 +23,7 @@ public class Enemy : AI {
 		enemy_tag = "Dragon";
 
 		fsm.set_death( new State_Death_Enemy() );
-		fsm.change( new State_Base_Enemy() );
-//		fsm.change( new State_Loitering_Enemy() );
+		fsm.change( new State_Loitering_Enemy() );
 
 //		ses["Engine"].volume = 0.5f;
 //		ses["Engine"].Play();
