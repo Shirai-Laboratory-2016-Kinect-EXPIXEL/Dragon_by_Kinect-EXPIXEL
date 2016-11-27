@@ -32,11 +32,18 @@ public class Item {
 	//--------------------------------------------------------------------
 	public void load(ref int id, ref ArrayList array_list) {
 		this.id	= id;
+
+		var t = "";
+		foreach (var a in array_list)
+			t += a + ", ";
+		Debug.Log(t);
+
 		title	= (string)array_list[0];
 		icon	= "Icon/" + (string)array_list[1];
 		qr_play	= "QR/" + (string)array_list[2];
 		qr_app	= "QR/" + (string)array_list[3];
-		is_rare = Convert.ToBoolean( (string)array_list[4] );
+		is_rare = (string)array_list[4] == "" ?
+			false : Convert.ToBoolean( (string)array_list[4] );
 	}
 	//--------------------------------------------------------------------
 	// ● デバッグ表示

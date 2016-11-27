@@ -84,11 +84,12 @@ public class Input_EX : Mono_Behaviour_EX {
 
 			// 釣り開始を判定
 			var z = Mathf.Clamp01(joint_position.z * 2 * -1);
+/*
 			if (y > 0.4 && z <= 0)
 				fishing_accumulate_second = Time.time + 1;
 			if (fishing_accumulate_second > Time.time && z >= 0.5)
 				is_start_fishing = true;
-
+*/
 
 			debug_position = joint_position;
 			debug_position.z = z;

@@ -5,6 +5,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 //========================================================================
 // ■ Item_Manager
 //------------------------------------------------------------------------
@@ -16,11 +17,24 @@ public class Item_Manager : Text_Manager {
 	// ● メンバ変数
 	//--------------------------------------------------------------------
 	public Dictionary<string, Item> items;		// アイテムデータ
+//	int next_random_index;
 	//--------------------------------------------------------------------
 	// ● データ取得
 	//--------------------------------------------------------------------
 	public Item get(string name) {
 		return items.ContainsKey(name) ? items[name] : null;
+	}
+	//--------------------------------------------------------------------
+	// ● ランダムにデータ取得
+	//--------------------------------------------------------------------
+	public Item get_random() {
+/*
+		var i = next_random_index;
+		next_random_index =
+			(int)Mathf.Repeat(next_random_index + 1, items.Count);
+*/
+		var i = UnityEngine.Random.Range(0, items.Count);
+		return items.ElementAt(i).Value;
 	}
 	//--------------------------------------------------------------------
 	// ● コンストラクタ

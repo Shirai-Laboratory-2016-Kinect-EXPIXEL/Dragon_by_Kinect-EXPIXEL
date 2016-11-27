@@ -4,7 +4,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
 //========================================================================
 // ■ UI_Info
 //------------------------------------------------------------------------
@@ -15,20 +14,17 @@ public class UI_Info : Mono_Behaviour_EX {
 	//--------------------------------------------------------------------
 	// ● メンバ変数
 	//--------------------------------------------------------------------
-	public List<GameObject> ui_gos;
-	int index;
-	float next_change_second;
 	Dragon dragon;
 	CanvasGroup group;
+	Text text;
 	//--------------------------------------------------------------------
 	// ● 初期化
 	//--------------------------------------------------------------------
 	void Start() {
 		dragon = GameObject.FindWithTag("Dragon").GetComponent<Dragon>();
 		group = GetComponent<CanvasGroup>();
+		text = GetComponentInChildren<Text>();
 
-		foreach (var go in ui_gos)
-			go.SetActive(false);
 		group.alpha = 0;
 	}
 	//--------------------------------------------------------------------
@@ -36,13 +32,12 @@ public class UI_Info : Mono_Behaviour_EX {
 	//--------------------------------------------------------------------
 	void Update() {
 		group.alpha = dragon.fsm.state() is State_Sleep_Dragon ? 0 : 1;
-		
 
-		if (next_change_second < Time.time) {
-			next_change_second = Time.time + 0.5f;
-			ui_gos[index].SetActive(false);
-			index = (int)Mathf.Repeat(index + 1, ui_gos.Count);
-			ui_gos[index].SetActive(true);
-		}
+		if (dragon.fsm.state() is State_Contact_Dragon)
+			text.text = "右手を動かして、ドラゴンを撫でよう！";
+		else if (dragon.fsm.state() is State_Fishing_Dragon)
+			text.text = "ドラゴンが何かを狩っている・・・！？";
+		else if (dragon.fsm.state() is State_Result_Dragon)
+			text.text = "オススメゲームを採ってきてくれた！";
 	}
 }

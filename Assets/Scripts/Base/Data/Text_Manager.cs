@@ -140,7 +140,7 @@ public class Text_Manager {
 
 		// ダブルクォーテーションの外、通常文字列が存在し、
 		// 開始要素位置以上の場合
-		if (!double_quotation && length > 0 && index > 0) {
+		if (!double_quotation && (datas.ContainsKey(index) || length > 0) && index > 0) {
 			// 要素が無い場合、動的配列を作成
 			if ( !datas.ContainsKey(index) )
 				datas[index] = new ArrayList();

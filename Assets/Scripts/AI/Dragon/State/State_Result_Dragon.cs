@@ -13,7 +13,7 @@ public class State_Result_Dragon : State_Base_Dragon {
 	//--------------------------------------------------------------------
 	// ● メンバ変数
 	//--------------------------------------------------------------------
-	float next_state_second = 20;
+	float next_state_second;
 	//--------------------------------------------------------------------
 	// ● 初期化
 	//--------------------------------------------------------------------
@@ -24,7 +24,13 @@ public class State_Result_Dragon : State_Base_Dragon {
 		for (var i = 0; i < Random.Range(0, 4); i++)
 			ai.change_idle_type();
 
-		next_state_second += Time.time;
+		next_state_second = (Debug.isDebugBuild ? 10 : 30) + Time.time;
+
+		var go = GameObject.FindWithTag("Smartphone");
+		if (go != null)	go.GetComponent<Smartphone>().relinquish();
+
+		Audio_Manager.me.set_volume(1);
+		Audio_Manager.me.play("Fanfare");
 	}
 	//--------------------------------------------------------------------
 	// ● 更新
@@ -49,6 +55,8 @@ public class State_Result_Dragon : State_Base_Dragon {
 
 		ai.animator.SetBool("Is_Idle", false);
 		ai.status.item = null;
+		
+		Audio_Manager.me.play("");
 	}
 	//--------------------------------------------------------------------
 	// ● 衝突情報を受信

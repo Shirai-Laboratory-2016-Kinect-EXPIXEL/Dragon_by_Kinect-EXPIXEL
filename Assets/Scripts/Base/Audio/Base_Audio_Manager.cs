@@ -49,7 +49,7 @@ public class Base_Audio_Manager {
 	//--------------------------------------------------------------------
 	// ● 読み込み
 	//--------------------------------------------------------------------
-	public void load(ref string name, string sub_path = "",
+	public void load(string name, string sub_path = "",
 						string file_name = null) {
 		// ファイル名が指定されていない場合、識別名と兼用する
 		if (file_name == null)	file_name = name;
@@ -64,7 +64,7 @@ public class Base_Audio_Manager {
 	//--------------------------------------------------------------------
 	virtual public void play(string name, string sub_path = "") {
 		// 読み込まれていない場合、読み込む
-		if ( !audios.ContainsKey(name) )	load(ref name, sub_path);
+		if ( !audios.ContainsKey(name) )	load(name, sub_path);
 
 		audios["present"] = audios[name];	// 現在再生音に登録
 	}

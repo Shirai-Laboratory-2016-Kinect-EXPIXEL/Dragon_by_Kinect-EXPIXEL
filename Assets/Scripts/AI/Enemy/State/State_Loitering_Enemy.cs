@@ -34,6 +34,10 @@ public class State_Loitering_Enemy : State_Loitering_AI {
 	//--------------------------------------------------------------------
 	public override void update() {
 		base.update();
+
+		var pos = ai.transform.position;
+		pos.y = ai.points.points[0].y;
+		ai.transform.position = pos;
 	}
 	//--------------------------------------------------------------------
 	// ● 次の状態を判定

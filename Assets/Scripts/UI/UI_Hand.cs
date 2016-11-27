@@ -25,6 +25,7 @@ public class UI_Hand : Mono_Behaviour_EX {
 	void Start() {
 		transform = GetComponent<RectTransform>();
 		dragon = GameObject.FindWithTag("Dragon").GetComponent<Dragon>();
+
 	}
 	//--------------------------------------------------------------------
 	// ● 更新
@@ -44,7 +45,8 @@ public class UI_Hand : Mono_Behaviour_EX {
 			var delta = transform.position - last_position;
 			var distance = delta.magnitude;
 			if (distance > 10) {
-				dragon.status.mood += distance / 400;//1000;
+				var mood_add = distance / 400;//1000;
+				dragon.status.mood += mood_add;
 
 				if (next_change_second < Time.time) {
 					next_change_second = Time.time + 1;
@@ -56,6 +58,9 @@ public class UI_Hand : Mono_Behaviour_EX {
 					go.transform.SetParent(transform.parent, false);
 					go.transform.position = transform.position;
 					go.transform.rotation = transform.rotation;
+
+					var se = mood_add > 0.05 ? "SE_Cute_2" : "SE_Cute_1";
+					dragon.ses[se].PlayOneShot(dragon.ses[se].clip);
 				}
 			}
 		}

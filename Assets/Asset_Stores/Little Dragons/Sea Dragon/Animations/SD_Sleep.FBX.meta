@@ -122,7 +122,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -164,6 +164,14 @@ ModelImporter:
         functionName: Eyes
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c4c988c800d11794680c307fafec6cb5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.39698493
+        functionName: se_play
+        data: SE_Fawn_On
+        objectReferenceParameter: {fileID: 11500000, guid: fe66fe8ad6186784a96c05f6cb0aaf8e,
           type: 3}
         floatParameter: 0
         intParameter: 0
@@ -295,7 +303,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.07872698
+        functionName: se_play
+        data: SE_Snore
+        objectReferenceParameter: {fileID: 11500000, guid: fe66fe8ad6186784a96c05f6cb0aaf8e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -431,6 +447,14 @@ ModelImporter:
           type: 3}
         floatParameter: 0
         intParameter: 1
+        messageOptions: 0
+      - time: 0.5169713
+        functionName: se_play
+        data: SE_Fawn_On
+        objectReferenceParameter: {fileID: 11500000, guid: fe66fe8ad6186784a96c05f6cb0aaf8e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
         messageOptions: 0
       transformMask:
       - path: 

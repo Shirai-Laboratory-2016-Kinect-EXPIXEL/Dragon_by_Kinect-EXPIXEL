@@ -35,9 +35,16 @@ public class Game_Manager : Scene_Manager {
 
 		start_second += Time.time;
 		
-		// ＢＧＭを再生
+		// 各種音を読み込み
+		Audio_Manager.bgm.load("hureai");
+		Audio_Manager.bgm.load("nyusuityu");
+		Audio_Manager.bgs.load("kaze");
+		Audio_Manager.bgs.load("suityu");
+		Audio_Manager.me.load("Fanfare");
+
+		// ＢＧＳを再生
 		Audio_Manager.bgs.set_volume(0.3f);
-//		Audio_Manager.bgs.play("009-Wave02");
+		Audio_Manager.bgs.play("kaze");
 	}
 	//--------------------------------------------------------------------
 	// ● 更新
