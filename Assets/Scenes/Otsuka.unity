@@ -1012,7 +1012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &308551727
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2109,7 +2109,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30BD\u30B7\u30E3\u30B2\u30AC\u30C1\u30E3"
+  m_Text: "\u30A2\u30D7\u30EA\u30B3\u30CD\u30AF\u30C8"
 --- !u!222 &1008112314
 CanvasRenderer:
   m_ObjectHideFlags: 0
