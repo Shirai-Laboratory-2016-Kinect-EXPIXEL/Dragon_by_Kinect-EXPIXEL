@@ -1,25 +1,63 @@
-タイトル,アイコン画像名,PlayStoreQR画像名,AppStoreQR画像名,珍しいか？
+タイトル,会社名,説明文,アイコン画像名,PlayStoreQR画像名,AppStoreQR画像名,珍しいか？
 
 //Demise of The Humanity,Demise_of_The_Humanity,QR_Code,QR_Code,false
 //プロフィール,Profile,QR_Code,QR_Code,true
 
 
-サウザンドメモリーズ,Akatsuki,Akatsuki_play,Akatsuki_app,false
-太鼓の達人+,BANDAI NAMCO,BANDAI NAMCO_play,BANDAI NAMCO_app,false
-魔法科高校の劣等生 LOST ZERO,BeXied,BeXied_play,BeXied_app,false
-逆転オセロニア,DeNA,DeNA_play,DeNA_app,false
-いきなり！ラスボス30,Dimps,Dimps_play,Dimps_app,false
-夢王国と眠れる100人の王子様,GCREST,GCREST_play,GCREST_app,false
-アイテム代は経費で落ちない,HEXADRIVE,HEXADRIVE_play,HEXADRIVE_app,false
-ドリフェス！,LAND HO,LAND HO_play,LAND HO_app,false
-FINAL FANTASY LEGENDS II,Matrix,Matrix_play,Matrix_app,false
-サムライ ライジング,monobit,monobit_play,monobit_app,false
-ご当地きゃら祭り コインdeパズル,NOWPRODUCTION,NOWPRODUCTION_play,NOWPRODUCTION_app,false
-戦国パズル!!あにまる大合戦,RACJIN,RACJIN_play,RACJIN_app,false
-私とダメ勇者クエスト ~メタルだけを狩る冒険の旅~,R-FORCE,R-FORCE_play,R-FORCE_app,false
-ベジマギッ！,RIZ,RIZ_play,RIZ_app,false
-ペンギン大収穫,SUNSOFT,SUNSOFT_play,SUNSOFT_app,false
-13人の謎- Fake Social Network -,VANGUARD,VANGUARD_play,VANGUARD_app,false
-クラッシュフィーバー,Wonder Planet,Wonder Planet_play,Wonder Planet_app,false
+サウザンドメモリーズ,Akatsuki Inc.,"ちびキャラ繋いで敵をボッコボコ！！つなゲー「サウザンドメモリーズ」！
+”繋ぐ”新アクションバトルシステム、”聴ける”フルボイス、”泣ける”本格ストーリー！",Akatsuki,Akatsuki_play,Akatsuki_app,false
+
+太鼓の達人+,BANDAI NAMCO Entertainment Inc.,"■■特報！■■
+○チェインクロニクル×太鼓の達人コラボキャンペーン第2弾！",BANDAI NAMCO,BANDAI NAMCO_play,BANDAI NAMCO_app,false
+
+魔法科高校の劣等生 LOST ZERO,"BeXied
+SQUARE ENIX INC","150万ダウンロード突破！！
+禁じられし”零”の因果が新たな波乱を巻き起こす―",BeXied,BeXied_play,BeXied_app,false
+
+逆転オセロニア,DeNA Co. Ltd.,"負けてる時ほど面白い！
+ドラマチック逆転バトル「逆転オセロニア」が登場！！
+友達と！全国のプレイヤーと！白熱のリアルタイムバトル！",DeNA,DeNA_play,DeNA_app,false
+
+いきなり！ラスボス30,Dimps Corporation,「いきなり!ラスボス30」は、あらすじを読んだら、すぐにラスボスとのバトルに入るというRPGです。,Dimps,Dimps_play,Dimps_app,false
+
+夢王国と眠れる100人の王子様,GCREST Inc.,"「あなたの恋のお相手は100人の王子様！」新感覚の女性向けパズルRPG！
+眠りに落ちてしまった王子様を目覚めさせて、彼らとの甘いストーリーを開放していこう！",GCREST,GCREST_play,GCREST_app,false
+
+アイテム代は経費で落ちない,HEXADRIVE Inc.,"勇者は全員敗北した。
+終末世界に残されたのは、一般人（HP１。とても弱い）だけ。
+剣なし。魔法なし。そんな彼らにも…「アイテムをなげる」ことはできる！",HEXADRIVE,HEXADRIVE_play,HEXADRIVE_app,false
+
+ドリフェス！,"LAND HO
+BANDAI Co. Ltd.","～ドリフェス！～とは
+アイドルたちがデビューをかけて目指す夢のステージ、ドリフェス！
+そこに向けて日々、アツく切磋琢磨するアイドルたち。",LAND HO,LAND HO_play,LAND HO_app,false
+
+FINAL FANTASY LEGENDS II,"Matrix
+SQUARE ENIX INC",【新たなファイナルファンタジーの伝説が今、始まる――。】,Matrix,Matrix_play,Matrix_app,false
+
+サムライ ライジング,"monobit
+SQUARE ENIX INC",スクウェア・エニックスがおくる本格アクションRPG！,monobit,monobit_play,monobit_app,false
+
+ご当地きゃら祭り コインdeパズル,NOWPRODUCTION CO. LTD,「ご当地きゃら祭 コインdeパズル」は、『コイン落とし』と『パズル』を組み合わせたステージ制の新感覚パズルゲームです。,NOWPRODUCTION,NOWPRODUCTION_play,NOWPRODUCTION_app,false
+
+戦国パズル!!あにまる大合戦,Racjin Co. Ltd.,"「戦国パズル!!あにまる大合戦」通称「パズあに」はみんなに愛されて「88万ダウンロード」達成！
+戦国アニマルパズルで活躍するふなっしーを見逃すな！",RACJIN,RACJIN_play,RACJIN_app,false
+
+私とダメ勇者クエスト ~メタルだけを狩る冒険の旅~,R-FORCE ENTERTAINMENT,"私とダメ勇者クエスト ~メタルだけを狩る冒険の旅~
+メタルしか倒さないダメ勇者のために、魔法使いを操りスライムをメタルに塗りまくろう。
+メタルなスライムを倒してゆき、経験値大量GETからのレベルアップしまくりだ！",R-FORCE,R-FORCE_play,R-FORCE_app,false
+
+ベジマギッ！,RIZ Inc.,"かわいいけど、奥深い！
+野菜×タクティクスのRPGが、ついに登場！",RIZ,RIZ_play,RIZ_app,false
+
+ペンギン大収穫,(C)SUNSOFT,"タップ！！タップ！！タイルをタップして集めるだけ！ 
+とてもシンプルパズルゲームです。",SUNSOFT,SUNSOFT_play,SUNSOFT_app,false
+
+13人の謎- Fake Social Network -,VANGUARD,"脱出率１%！？あなたはこの謎を解き明かせるか？
+メッセージのやりとりで物語がすすむ、Facebook風謎解き・脱出ゲーム「１３人の謎」。",VANGUARD,VANGUARD_play,VANGUARD_app,false
+
+クラッシュフィーバー,WonderPlanet Inc.,"◆話題沸騰中！「ブッ快感」が熱い！◆
+キャンペーン続々実施！始めるなら今！
+全国マルチプレイでレアガチャ28回分回せる！",Wonder Planet,Wonder Planet_play,Wonder Planet_app,false
 
 

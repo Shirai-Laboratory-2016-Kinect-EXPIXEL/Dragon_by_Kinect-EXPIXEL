@@ -17,7 +17,7 @@ public class Item_Manager : Text_Manager {
 	// ● メンバ変数
 	//--------------------------------------------------------------------
 	public Dictionary<string, Item> items;		// アイテムデータ
-//	int next_random_index;
+	int next_random_index;
 	//--------------------------------------------------------------------
 	// ● データ取得
 	//--------------------------------------------------------------------
@@ -28,12 +28,12 @@ public class Item_Manager : Text_Manager {
 	// ● ランダムにデータ取得
 	//--------------------------------------------------------------------
 	public Item get_random() {
-/*
+///*
 		var i = next_random_index;
 		next_random_index =
 			(int)Mathf.Repeat(next_random_index + 1, items.Count);
-*/
-		var i = UnityEngine.Random.Range(0, items.Count);
+//*/
+//		var i = UnityEngine.Random.Range(0, items.Count);
 		return items.ElementAt(i).Value;
 	}
 	//--------------------------------------------------------------------

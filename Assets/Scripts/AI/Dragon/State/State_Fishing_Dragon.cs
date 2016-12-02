@@ -39,7 +39,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 			.GetComponent<Game_Manager>();
 		error_second += Time.time;
 
-		Audio_Manager.bgm.set_volume(0.8f);
+		Audio_Manager.bgm.set_volume(0.5f);
 		Audio_Manager.bgm.play("nyusuityu");
 		ai.ses["SE_Understand"].Play();
 
@@ -177,7 +177,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 			yield return null;
 		}
 		if (water_hose != null)	Object.Destroy(water_hose);
-		Audio_Manager.bgs.set_volume(0.3f);
+		Audio_Manager.bgs.set_volume(0.2f);
 		Audio_Manager.bgs.play("kaze");
 		coroutines.Add( ai.StartCoroutine( landing_home() ) );
 	}
@@ -299,7 +299,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 		
 		if (water_hose != null)	Object.Destroy(water_hose);
 
-		Audio_Manager.bgs.set_volume(0.3f);
+		Audio_Manager.bgs.set_volume(0.2f);
 		Audio_Manager.bgs.play("kaze");
 		Audio_Manager.bgm.play("");
 	}

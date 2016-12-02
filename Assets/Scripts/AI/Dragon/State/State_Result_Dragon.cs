@@ -24,12 +24,12 @@ public class State_Result_Dragon : State_Base_Dragon {
 		for (var i = 0; i < Random.Range(0, 4); i++)
 			ai.change_idle_type();
 
-		next_state_second = (Debug.isDebugBuild ? 10 : 30) + Time.time;
+		next_state_second = (Debug.isDebugBuild ? 10 : 120) + Time.time;
 
 		var go = GameObject.FindWithTag("Smartphone");
 		if (go != null)	go.GetComponent<Smartphone>().relinquish();
 
-		Audio_Manager.me.set_volume(1);
+		Audio_Manager.me.set_volume(0.5f);
 		Audio_Manager.me.play("Fanfare");
 	}
 	//--------------------------------------------------------------------

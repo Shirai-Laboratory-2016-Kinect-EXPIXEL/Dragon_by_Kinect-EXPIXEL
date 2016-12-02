@@ -16,6 +16,8 @@ public class Item {
 	//--------------------------------------------------------------------
 	public GameObject game_object;	// ゲームオブジェクト
 	public string title;			// タイトル
+	public string company;			// 会社名
+	public string info;				// 説明文
 	public string icon;				// アイコン名
 	public string qr_play;			// PlayStoreのQR画像名
 	public string qr_app;			// AppStoreのQR画像名
@@ -39,11 +41,13 @@ public class Item {
 		Debug.Log(t);
 
 		title	= (string)array_list[0];
-		icon	= "Icon/" + (string)array_list[1];
-		qr_play	= "QR/" + (string)array_list[2];
-		qr_app	= "QR/" + (string)array_list[3];
-		is_rare = (string)array_list[4] == "" ?
-			false : Convert.ToBoolean( (string)array_list[4] );
+		company	= (string)array_list[1];
+		info	= (string)array_list[2];
+		icon	= "Icon/" + (string)array_list[3];
+		qr_play	= "QR/" + (string)array_list[4];
+		qr_app	= "QR/" + (string)array_list[5];
+		is_rare = (string)array_list[6] == "" ?
+			false : Convert.ToBoolean( (string)array_list[6] );
 	}
 	//--------------------------------------------------------------------
 	// ● デバッグ表示
@@ -51,6 +55,8 @@ public class Item {
 	public void print() {
 		Debug.Log(id);
 		Debug.Log(title);
+		Debug.Log(company);
+		Debug.Log(info);
 		Debug.Log(icon);
 		Debug.Log(qr_play);
 		Debug.Log(qr_app);

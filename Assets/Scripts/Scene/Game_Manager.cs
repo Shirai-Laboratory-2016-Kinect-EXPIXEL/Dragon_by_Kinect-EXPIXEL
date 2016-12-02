@@ -43,7 +43,7 @@ public class Game_Manager : Scene_Manager {
 		Audio_Manager.me.load("Fanfare");
 
 		// ＢＧＳを再生
-		Audio_Manager.bgs.set_volume(0.3f);
+		Audio_Manager.bgs.set_volume(0.2f);
 		Audio_Manager.bgs.play("kaze");
 	}
 	//--------------------------------------------------------------------

@@ -23,6 +23,8 @@ public class UI_Result : Mono_Behaviour_EX {
 	//--------------------------------------------------------------------
 	public Image icon;
 	public Text title;
+	public Text company;
+	public Text info;
 	public Image qr_play_store;
 	public Image qr_app_store;
 	Image back_ground;
@@ -48,6 +50,8 @@ public class UI_Result : Mono_Behaviour_EX {
 		{
 			var item = dragon.status.item;
 			title.text = item.title;
+			company.text = item.company;
+			info.text = item.info;
 			icon.sprite = Resources.Load<Sprite>(item.icon);
 			qr_play_store.sprite = Resources.Load<Sprite>(item.qr_play);
 			qr_app_store.sprite = Resources.Load<Sprite>(item.qr_app);

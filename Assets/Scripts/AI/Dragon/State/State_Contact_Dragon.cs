@@ -20,12 +20,13 @@ public class State_Contact_Dragon : State_Base_Dragon {
 	//--------------------------------------------------------------------
 	public override void initialize() {
 		base.initialize();
-
+		
+		ai.status.mood = 0;
 		change_fishing_mood = ai.status.mood + 10;
 		change_fishing_second = 30 + Time.time;
 
 		ai.animator.SetBool("Is_Idle", true);
-		Audio_Manager.bgm.set_volume(0.8f);
+		Audio_Manager.bgm.set_volume(0.5f);
 		Audio_Manager.bgm.play("hureai");
 	}
 	//--------------------------------------------------------------------
