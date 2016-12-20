@@ -48,7 +48,7 @@ public class Item_Manager : Text_Manager {
 
 		path += "Game/";	// フォルダ階層を設定
 
-		load();
+		load("Tepia");
 //		initialize_test();
 	}
 	//--------------------------------------------------------------------
