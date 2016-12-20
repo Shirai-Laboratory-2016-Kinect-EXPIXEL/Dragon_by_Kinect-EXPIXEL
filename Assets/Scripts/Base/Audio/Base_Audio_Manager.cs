@@ -45,6 +45,8 @@ public class Base_Audio_Manager {
 
 		// 音の発生源を作成
 		source = Audio_Manager.speaker.AddComponent<AudioSource>();
+		source.spatialBlend = 1;
+		source.maxDistance = 10;
 	}
 	//--------------------------------------------------------------------
 	// ● 読み込み

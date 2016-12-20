@@ -317,7 +317,7 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 		var e = data.target.root.GetComponent<Enemy>();
 		if ( e != null && !e.fsm.is_death() ) {
 			e.status.death();
-			ai.status.item = Data_Manager.item.get_random();
+			ai.status.item = Data_Manager.game.get_random();
 			Audio_Manager.se.play("aikon-reasyutoku");
 			if (GameObject.FindWithTag("Smartphone") == null) {
 				Object.Instantiate(ai.smartphone,

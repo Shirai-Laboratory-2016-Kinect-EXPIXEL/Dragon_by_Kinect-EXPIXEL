@@ -46,7 +46,7 @@ public class Item_Manager : Text_Manager {
 		// アイテムデータを作成
 		items = new Dictionary<string, Item>();
 
-		path += "Item/";	// フォルダ階層を設定
+		path += "Game/";	// フォルダ階層を設定
 
 		load();
 //		initialize_test();

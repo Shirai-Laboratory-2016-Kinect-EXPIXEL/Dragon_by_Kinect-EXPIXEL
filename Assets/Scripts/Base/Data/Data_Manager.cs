@@ -12,17 +12,20 @@ public class Data_Manager : Mono_Behaviour_EX {
 	//--------------------------------------------------------------------
 	// ● メンバ変数
 	//--------------------------------------------------------------------
-	public static Item_Manager item;			// アイテムデータ
+	public static Item_Manager game;            // ゲームアイテムデータ
+	public static News_Sentence_Manager news;	// ニュース文章データ
 	//--------------------------------------------------------------------
 	// ● 初期化（早）
 	//--------------------------------------------------------------------
 	void Awake() {
-		item = new Item_Manager();
+		game = new Item_Manager();
+		news = new News_Sentence_Manager();
 	}
 	//--------------------------------------------------------------------
 	// ● 全消去
 	//--------------------------------------------------------------------
 	public void all_clear() {
-		item.clear();
+		game.clear();
+		news.clear();
 	}
 }

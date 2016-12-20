@@ -32,10 +32,17 @@ public class UI_Hand : Mono_Behaviour_EX {
 	//--------------------------------------------------------------------
 	void Update() {
 		transform.anchoredPosition = Input_EX.hand_position;
+		
 
 		var ray_pos = transform.position;
 		ray_pos.z = 0;
 		RaycastHit hit_info;
+/*
+		var ray = RectTransformUtility.ScreenPointToRay(
+			Camera.main, transform.anchoredPosition);
+		var is_hit = Physics.Raycast(
+			ray, out hit_info, 5);
+*/
 		var is_hit = Physics.Raycast(
 			Camera.main.ScreenPointToRay(ray_pos),
 			out hit_info,
