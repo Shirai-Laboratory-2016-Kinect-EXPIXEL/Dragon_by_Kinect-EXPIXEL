@@ -825,7 +825,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400036, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 177.88
+      value: 175.51
       objectReference: {fileID: 0}
     - target: {fileID: 400036, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6206,7 +6206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99adde3504414e04a85424f616f4f3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file_name: Test
+  file_name: Tepia
   tv_sprite: {fileID: 671763889}
 --- !u!1 &1991133398
 GameObject:
