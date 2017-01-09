@@ -25,8 +25,7 @@ public class UI_Result : Mono_Behaviour_EX {
 	public Text title;
 	public Text company;
 	public Text info;
-	public Image qr_play_store;
-	public Image qr_app_store;
+	public Image qr;
 	Image back_ground;
 	CanvasGroup group;
 	float rate;
@@ -53,14 +52,10 @@ public class UI_Result : Mono_Behaviour_EX {
 			company.text = item.company;
 			info.text = item.info;
 			icon.sprite = Resources.Load<Sprite>(item.icon);
-			qr_play_store.sprite =
-				item.qr_play != "" ? Resources.Load<Sprite>(item.qr_play)
+			qr.sprite =
+				item.qr != "" ? Resources.Load<Sprite>(item.qr)
 				: null;
-			qr_app_store.sprite =
-				item.qr_app != "" ? Resources.Load<Sprite>(item.qr_app)
-				: null;
-			back_ground.color =
-				(item.is_rare ? Color.yellow : Color.white) * 0.8f;
+			back_ground.color = Color.white * 0.8f;
 		}
 		last_item = dragon.status.item;
 

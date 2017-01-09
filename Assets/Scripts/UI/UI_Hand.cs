@@ -15,6 +15,7 @@ public class UI_Hand : Mono_Behaviour_EX {
 	//--------------------------------------------------------------------
 	new RectTransform transform;
 	Dragon dragon;
+	new Camera camera;
 	Vector3 last_position;
 	public GameObject ui_heart;
 	float next_heart_second;
@@ -25,7 +26,8 @@ public class UI_Hand : Mono_Behaviour_EX {
 	void Start() {
 		transform = GetComponent<RectTransform>();
 		dragon = GameObject.FindWithTag("Dragon").GetComponent<Dragon>();
-
+		camera = GameObject.FindWithTag("Application_Connect_Camera")
+			.GetComponent<Camera>();
 	}
 	//--------------------------------------------------------------------
 	// ● 更新
@@ -35,24 +37,26 @@ public class UI_Hand : Mono_Behaviour_EX {
 		
 
 		var ray_pos = transform.position;
-		ray_pos.z = 0;
+		ray_pos -= transform.parent.position;
+		ray_pos = Input_EX.hand_position / 2;
+		ray_pos.y += 540;
+		
 		RaycastHit hit_info;
-/*
-		var ray = RectTransformUtility.ScreenPointToRay(
-			Camera.main, transform.anchoredPosition);
+		var ray = camera.ScreenPointToRay(ray_pos);
+		if (Debug.isDebugBuild)
+			Debug.DrawRay(ray.origin, ray.direction * 5, Color.red);
+
 		var is_hit = Physics.Raycast(
-			ray, out hit_info, 5);
-*/
-		var is_hit = Physics.Raycast(
-			Camera.main.ScreenPointToRay(ray_pos),
+			ray,
 			out hit_info,
 			5);
 
 		if (is_hit && hit_info.transform.root.tag == "Dragon") {
 			var delta = transform.position - last_position;
 			var distance = delta.magnitude;
-			if (distance > 10) {
-				var mood_add = distance / 400;//1000;
+
+			if (distance > 0.3) {
+				var mood_add = distance / 12;
 				dragon.status.mood += mood_add;
 
 				if (next_change_second < Time.time) {

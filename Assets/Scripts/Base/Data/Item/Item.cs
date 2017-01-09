@@ -19,9 +19,7 @@ public class Item {
 	public string company;			// 会社名
 	public string info;				// 説明文
 	public string icon;				// アイコン名
-	public string qr_play;			// PlayStoreのQR画像名
-	public string qr_app;			// AppStoreのQR画像名
-	public bool is_rare;			// 珍しいか？
+	public string qr;				// PlayStoreのQR画像名
 	public int id;					// ID 番号
 	//--------------------------------------------------------------------
 	// ● コンストラクタ
@@ -44,10 +42,7 @@ public class Item {
 		company	= (string)array_list[1];
 		info	= (string)array_list[2];
 		icon	= "Icon/" + (string)array_list[3];
-		qr_play	= "QR/" + (string)array_list[4];
-		qr_app	= "QR/" + (string)array_list[5];
-		is_rare = (string)array_list[6] == "" ?
-			false : Convert.ToBoolean( (string)array_list[6] );
+		qr	= "QR/" + (string)array_list[4];
 	}
 	//--------------------------------------------------------------------
 	// ● デバッグ表示
@@ -58,7 +53,6 @@ public class Item {
 		Debug.Log(company);
 		Debug.Log(info);
 		Debug.Log(icon);
-		Debug.Log(qr_play);
-		Debug.Log(qr_app);
+		Debug.Log(qr);
 	}
 }

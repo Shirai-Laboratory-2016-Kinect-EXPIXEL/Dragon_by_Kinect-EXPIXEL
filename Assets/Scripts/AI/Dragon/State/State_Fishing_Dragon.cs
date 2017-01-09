@@ -213,7 +213,8 @@ public class State_Fishing_Dragon : State_Base_Dragon {
 	IEnumerator turn_home() {
 		forcing_stop();
 		ai.animator.SetFloat("Move_Z", -1);
-		target_position = Camera.main.transform.position;
+		target_position = GameObject.FindWithTag(
+			"Application_Connect_Camera").transform.position;
 		target_position.y = ai.transform.position.y;
 
 		while (true) {

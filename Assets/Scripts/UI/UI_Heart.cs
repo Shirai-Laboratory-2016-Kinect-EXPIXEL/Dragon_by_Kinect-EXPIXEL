@@ -19,16 +19,17 @@ public class UI_Heart : Mono_Behaviour_EX {
 	float up_speed;
 	Quaternion rotation;
 	float alpha_sub_speed;
+	new RectTransform transform;
 	//--------------------------------------------------------------------
 	// ● 初期化
 	//--------------------------------------------------------------------
 	void Start() {
 		image = GetComponent<Image>();
+		transform = GetComponent<RectTransform>();
 
-		transform.position += new Vector3(
+		transform.anchoredPosition += new Vector2(
 			Random.Range(-30, 30),
-			Random.Range(-30, 30),
-			0);
+			Random.Range(-30, 30) );
 		radian = Random.Range(0, Mathf.PI * 2);
 		up_speed = Random.Range(0.7f, 1.3f);
 		
@@ -59,10 +60,11 @@ public class UI_Heart : Mono_Behaviour_EX {
 		radian += Mathf.PI * 2 * Time.deltaTime;
 		radian = Mathf.Repeat(radian, Mathf.PI * 2);
 
-		transform.position +=
+		var hoge =
 			rotation *
-			new Vector3(Mathf.Sin(radian), up_speed, 0) *
+			new Vector2(Mathf.Sin(radian), up_speed) *
 			100 * Time.deltaTime;
+		transform.anchoredPosition += new Vector2(hoge.x, hoge.y);
 
 		if (c.a <= 0)	Destroy(gameObject);
 	}

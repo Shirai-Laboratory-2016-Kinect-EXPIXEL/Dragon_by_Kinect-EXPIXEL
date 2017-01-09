@@ -12,6 +12,8 @@ TagManager:
   - Fire
   - Home
   - Smartphone
+  - Application_Connect_Camera
+  - ExPixel_Changer
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,7 @@ public class Audio_Manager : Mono_Behaviour_EX {
 	// ● メンバ変数
 	//--------------------------------------------------------------------
 	public static GameObject speaker;	// 音発生用スピーカー
+	ExPixel_Changer ex_pixel;
 	// 各種管理クラス
 	public static BGM_Manager bgm;		// BGM
 	public static BGS_Manager bgs;		// BGS
@@ -27,8 +28,10 @@ public class Audio_Manager : Mono_Behaviour_EX {
 		if (!speaker) {
 			// 音発生用スピーカーを作成し、ゲーム内に配置
 			speaker = new GameObject("Audio_Speaker");
+			ex_pixel = GameObject.FindWithTag("ExPixel_Changer")
+				.GetComponent<ExPixel_Changer>();
 			// カメラ位置に合わせる
-			speaker.transform.position = Camera.main.transform.position;
+			speaker.transform.position = get_camera_position();
 			DontDestroyOnLoad(speaker);		// シーン切り替え後も保存
 
 			// 各種管理クラスを作成
@@ -40,11 +43,27 @@ public class Audio_Manager : Mono_Behaviour_EX {
 		}
 	}
 	//--------------------------------------------------------------------
+	// ● カメラ位置を取得
+	//--------------------------------------------------------------------
+	Vector3 get_camera_position() {
+		return GameObject.FindWithTag("Application_Connect_Camera")
+			.transform.position;
+/*
+		if (ex_pixel.application_connect_audio_listener.enabled)
+			return ex_pixel.application_connect_audio_listener.transform
+				.position;
+		else if (ex_pixel.news_audio_listener.enabled)
+			return ex_pixel.news_audio_listener.transform.position;
+		else
+			return Vector3.zero;
+*/
+	}
+	//--------------------------------------------------------------------
 	// ● 更新（遅）
 	//--------------------------------------------------------------------
 	void LateUpdate() {
 		// カメラ位置に合わせる
-		speaker.transform.position = Camera.main.transform.position;
+		speaker.transform.position = get_camera_position();
 	}
 	//--------------------------------------------------------------------
 	// ● 全消去

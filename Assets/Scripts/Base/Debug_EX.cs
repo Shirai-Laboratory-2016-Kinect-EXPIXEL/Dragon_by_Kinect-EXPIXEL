@@ -57,7 +57,7 @@ public class Debug_EX : Mono_Behaviour_EX {
 		texts.Clear();	// 毎フレーム初期化する
 		
 		// デバッグ表示キーが押された場合、表示フラグを反転
-		if ( Input.GetKeyDown(KeyCode.Alpha1) )
+		if ( Input.GetKeyDown(KeyCode.Return) )
 			is_view = !is_view;
 	}
 	//--------------------------------------------------------------------

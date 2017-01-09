@@ -1,6 +1,8 @@
-タイトル,会社名,説明文,アイコン画像名,PlayStoreQR画像名,AppStoreQR画像名,珍しいか？
+タイトル,会社名,説明文,アイコン画像名,QR画像名
 
-Manga Generator,神奈川工科大学白井研究室,マンガのコマごとに写真をとっていって１枚のマンガをつくる「Manga Generator」,MangaGenerator,MangaGenerator,,false
-ExPixel,神奈川工科大学白井研究室,1枚の直視型の液晶パネルに裸眼状態と、メガネを掛けた状態とで全く異なる映像を見せる技術「ExPixel」,ExPixel,ExPixel,,false
+Manga Generator,"神奈川工科大学
+白井研究室",マンガのコマごとに写真をとっていって１枚のマンガをつくる「Manga Generator」,MangaGenerator,MangaGenerator
+ExPixel,"神奈川工科大学
+白井研究室",1枚の直視型の液晶パネルに裸眼状態と、メガネを掛けた状態とで全く異なる映像を見せる技術「ExPixel」,ExPixel,ExPixel
 
 
